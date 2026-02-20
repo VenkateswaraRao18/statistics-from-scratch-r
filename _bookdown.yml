@@ -1,6 +1,4 @@
-book_filename: "Statistics_From_Scratch"
-output_dir: "docs"
-delete_merged_file: true
 rmd_files:
-  - book/index.Rmd
+  - index.Rmd
   - book/01-introduction.Rmd
+  - book/02_data_collection.Rmd

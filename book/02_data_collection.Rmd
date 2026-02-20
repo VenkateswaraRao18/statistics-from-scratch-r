@@ -1,0 +1,319 @@
+---
+title: "Chapter 2: Data and Data Collection"
+---
+
+# 1. What Is Data?
+
+Data is recorded information about the world.
+
+Examples:
+
+- Daily sales numbers
+- Temperature readings
+- Customer reviews
+- Blood pressure measurements
+- Website clicks
+
+But not all data is the same.
+
+Understanding data types is the first step toward correct analysis.
+
+---
+
+# 2. Types of Data
+
+There are two broad categories of data.
+
+## 2.1 Qualitative (Categorical) Data
+
+This describes qualities or categories.
+
+Examples:
+
+- Gender
+- Product category
+- Blood type
+- Customer satisfaction level
+
+Example in R:
+
+```{r}
+category <- c("Electronics", "Clothing", "Electronics", "Groceries")
+table(category)
+```
+
+This data describes groups, not numerical measurements.
+
+---
+
+## 2.2 Quantitative (Numerical) Data
+
+This represents measurable quantities.
+
+Examples:
+
+- Sales amount
+- Height
+- Weight
+- Revenue
+
+Example:
+
+```{r}
+sales <- c(120, 135, 150, 98, 175)
+mean(sales)
+```
+
+Quantitative data allows mathematical operations.
+
+---
+
+# 3. Levels of Measurement
+
+Understanding measurement scale determines what analysis is valid.
+
+## 3.1 Nominal Scale
+
+Categories without order.
+
+Example:
+- Colors
+- Blood type
+
+You cannot compute average of colors.
+
+---
+
+## 3.2 Ordinal Scale
+
+Categories with order but no fixed difference.
+
+Example:
+- Satisfaction: Low, Medium, High
+- Education level
+
+Difference between levels is not measurable.
+
+---
+
+## 3.3 Interval Scale
+
+Ordered and measurable but no true zero.
+
+Example:
+- Temperature in Celsius
+
+0°C does not mean "no temperature".
+
+---
+
+## 3.4 Ratio Scale
+
+Ordered, measurable, true zero.
+
+Example:
+- Income
+- Height
+- Sales revenue
+
+Most statistical methods require ratio scale data.
+
+---
+
+# 4. Population vs Sample
+
+## 4.1 Population
+
+Entire group of interest.
+
+Example:
+All customers of an e-commerce company.
+
+## 4.2 Sample
+
+Subset of population used for analysis.
+
+Example:
+Surveying 2,000 customers from 1 million.
+
+Why sample?
+
+- Cheaper
+- Faster
+- Practical
+
+Statistics allows us to generalize from sample to population.
+
+---
+
+# 5. Census vs Sampling
+
+## Census
+
+Collect data from entire population.
+
+Example:
+National census.
+
+## Sampling
+
+Collect data from subset.
+
+Most businesses use sampling.
+
+Sampling is powerful — but dangerous if done incorrectly.
+
+---
+
+# 6. Sampling Techniques
+
+## 6.1 Simple Random Sampling
+
+Every individual has equal chance.
+
+Example simulation:
+
+```{r}
+set.seed(123)
+population <- 1:10000
+sample_data <- sample(population, 100)
+head(sample_data)
+```
+
+---
+
+## 6.2 Stratified Sampling
+
+Divide population into groups, then sample from each.
+
+Example:
+- Male / Female
+- Region
+- Age group
+
+Used to ensure representation.
+
+---
+
+## 6.3 Systematic Sampling
+
+Select every k-th element.
+
+Example:
+Every 10th customer.
+
+---
+
+## 6.4 Cluster Sampling
+
+Select entire groups randomly.
+
+Example:
+Choose 5 stores and survey all customers there.
+
+---
+
+# 7. Sampling Bias
+
+Bias occurs when sample does not represent population.
+
+Example:
+
+Survey only online users → ignores offline customers.
+
+In ML:
+
+Training data biased → model biased.
+
+Real-world example:
+Facial recognition systems failing due to non-diverse training data.
+
+Bias leads to systematic error.
+
+---
+
+# 8. Types of Errors
+
+## 8.1 Sampling Error
+
+Difference between sample statistic and population parameter.
+
+Unavoidable but measurable.
+
+## 8.2 Non-Sampling Error
+
+- Data entry mistakes
+- Poor survey design
+- Measurement error
+
+Often more dangerous than sampling error.
+
+---
+
+# 9. Business Case Study
+
+Imagine an online retailer.
+
+They survey only customers who purchased in the last week.
+
+Question:
+Is this sample representative?
+
+No.
+
+Inactive customers are ignored.
+
+Conclusion:
+Marketing decisions based on this data may be flawed.
+
+---
+
+# 10. ML Dataset Bias Example
+
+Suppose you train a loan approval model using:
+
+- Mostly urban applicants
+- Few rural applicants
+
+Model learns patterns biased toward urban behavior.
+
+Result:
+Unfair decisions.
+
+Statistics teaches us:
+
+Data collection quality determines model fairness.
+
+---
+
+# 11. Why This Chapter Matters
+
+Most analytical errors do NOT come from complex math.
+
+They come from:
+
+- Poor sampling
+- Biased data
+- Misunderstood measurement scales
+
+If data is wrong,
+analysis will be wrong.
+
+Garbage in → garbage out.
+
+---
+
+# 12. Summary
+
+In this chapter we learned:
+
+- Types of data
+- Measurement scales
+- Population vs sample
+- Sampling techniques
+- Bias and errors
+- Business implications
+- ML fairness connection
+
+Next:
+We move to descriptive statistics.

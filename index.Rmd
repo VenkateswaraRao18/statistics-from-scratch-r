@@ -1,0 +1,36 @@
+---
+title: "Statistics From Scratch (Theory + R + ML)"
+author: "Venkateswara Rao Jannegorla"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+---
+
+# Welcome
+
+This book builds statistics from foundations to machine learning connections.
+
+It is designed for:
+
+- Beginners
+- Data science students
+- Business analytics learners
+- ML engineers who want strong statistical foundations
+
+# How to Use This Book
+
+1. Read intuition carefully  
+2. Run the R code  
+3. Think about business application  
+4. Connect to ML concepts  
+
+# Roadmap
+
+1. Introduction  
+2. Data & Collection  
+3. Descriptive Statistics  
+4. Probability  
+5. Inference  
+6. Regression  
+7. Time Series  
+8. Advanced Topics  
