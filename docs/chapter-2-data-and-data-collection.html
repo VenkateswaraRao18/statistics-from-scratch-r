@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>3 Roadmap | Statistics From Scratch (Theory + R + ML)</title>
-  <meta name="description" content="3 Roadmap | Statistics From Scratch (Theory + R + ML)" />
+  <title>5 Chapter 2: Data and Data Collection | Statistics From Scratch (Theory + R + ML)</title>
+  <meta name="description" content="5 Chapter 2: Data and Data Collection | Statistics From Scratch (Theory + R + ML)" />
   <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="3 Roadmap | Statistics From Scratch (Theory + R + ML)" />
+  <meta property="og:title" content="5 Chapter 2: Data and Data Collection | Statistics From Scratch (Theory + R + ML)" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3 Roadmap | Statistics From Scratch (Theory + R + ML)" />
+  <meta name="twitter:title" content="5 Chapter 2: Data and Data Collection | Statistics From Scratch (Theory + R + ML)" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="how-to-use-this-book.html"/>
-<link rel="next" href="chapter-1-introduction-to-statistics.html"/>
+<link rel="prev" href="chapter-1-introduction-to-statistics.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -227,34 +227,296 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="roadmap" class="section level1 hasAnchor" number="3">
-<h1><span class="header-section-number">3</span> Roadmap<a href="roadmap.html#roadmap" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<ol style="list-style-type: decimal">
-<li>Introduction<br />
+<div id="chapter-2-data-and-data-collection" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">5</span> Chapter 2: Data and Data Collection<a href="chapter-2-data-and-data-collection.html#chapter-2-data-and-data-collection" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Data is the raw material of statistics.</p>
+<p>Without good data, even the best statistical methods fail.</p>
+<hr />
+<div id="what-is-data-1" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> What Is Data?<a href="chapter-2-data-and-data-collection.html#what-is-data-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Data is recorded information about the world.</p>
+<p>Examples:</p>
+<ul>
+<li>Daily sales numbers<br />
 </li>
-<li>Data &amp; Collection<br />
+<li>Temperature readings<br />
 </li>
-<li>Descriptive Statistics<br />
+<li>Customer reviews<br />
 </li>
-<li>Probability<br />
+<li>Blood pressure measurements<br />
 </li>
-<li>Inference<br />
+<li>Website clicks</li>
+</ul>
+<p>Understanding what data represents is the first step toward correct analysis.</p>
+<hr />
+</div>
+<div id="types-of-data" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Types of Data<a href="chapter-2-data-and-data-collection.html#types-of-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>There are two broad categories of data.</p>
+<div id="qualitative-categorical-data" class="section level3 hasAnchor" number="5.2.1">
+<h3><span class="header-section-number">5.2.1</span> Qualitative (Categorical) Data<a href="chapter-2-data-and-data-collection.html#qualitative-categorical-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>This describes qualities or categories.</p>
+<p>Examples:</p>
+<ul>
+<li>Gender<br />
 </li>
-<li>Regression<br />
+<li>Product category<br />
 </li>
-<li>Time Series<br />
+<li>Blood type<br />
 </li>
-<li>Advanced Topics</li>
-</ol>
+<li>Customer satisfaction level</li>
+</ul>
+<p>Example in R:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="chapter-2-data-and-data-collection.html#cb9-1" tabindex="-1"></a>category <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Electronics&quot;</span>, <span class="st">&quot;Clothing&quot;</span>, <span class="st">&quot;Electronics&quot;</span>, <span class="st">&quot;Groceries&quot;</span>)</span>
+<span id="cb9-2"><a href="chapter-2-data-and-data-collection.html#cb9-2" tabindex="-1"></a><span class="fu">table</span>(category)</span></code></pre></div>
+<pre><code>## category
+##    Clothing Electronics   Groceries 
+##           1           2           1</code></pre>
+<p>This data describes groups, not numerical measurements.</p>
+<hr />
+</div>
+<div id="quantitative-numerical-data" class="section level3 hasAnchor" number="5.2.2">
+<h3><span class="header-section-number">5.2.2</span> Quantitative (Numerical) Data<a href="chapter-2-data-and-data-collection.html#quantitative-numerical-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>This represents measurable quantities.</p>
+<p>Examples:</p>
+<ul>
+<li>Sales amount<br />
+</li>
+<li>Height<br />
+</li>
+<li>Weight<br />
+</li>
+<li>Revenue</li>
+</ul>
+<p>Example:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="chapter-2-data-and-data-collection.html#cb11-1" tabindex="-1"></a>sales <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">120</span>, <span class="dv">135</span>, <span class="dv">150</span>, <span class="dv">98</span>, <span class="dv">175</span>)</span>
+<span id="cb11-2"><a href="chapter-2-data-and-data-collection.html#cb11-2" tabindex="-1"></a><span class="fu">mean</span>(sales)</span></code></pre></div>
+<pre><code>## [1] 135.6</code></pre>
+<p>Quantitative data allows mathematical operations.</p>
+<hr />
+</div>
+</div>
+<div id="levels-of-measurement" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Levels of Measurement<a href="chapter-2-data-and-data-collection.html#levels-of-measurement" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The level of measurement determines what type of analysis is valid.</p>
+<div id="nominal-scale" class="section level3 hasAnchor" number="5.3.1">
+<h3><span class="header-section-number">5.3.1</span> Nominal Scale<a href="chapter-2-data-and-data-collection.html#nominal-scale" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Categories without order.</p>
+<p>Example:
+- Colors<br />
+- Blood type</p>
+<p>You cannot compute an average of colors.</p>
+<hr />
+</div>
+<div id="ordinal-scale" class="section level3 hasAnchor" number="5.3.2">
+<h3><span class="header-section-number">5.3.2</span> Ordinal Scale<a href="chapter-2-data-and-data-collection.html#ordinal-scale" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Categories with order but no fixed difference.</p>
+<p>Example:
+- Satisfaction: Low, Medium, High<br />
+- Education level</p>
+<p>We know the order, but differences are not measurable.</p>
+<hr />
+</div>
+<div id="interval-scale" class="section level3 hasAnchor" number="5.3.3">
+<h3><span class="header-section-number">5.3.3</span> Interval Scale<a href="chapter-2-data-and-data-collection.html#interval-scale" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Ordered and measurable but no true zero.</p>
+<p>Example:
+- Temperature in Celsius</p>
+<p>0°C does not mean “no temperature.”</p>
+<hr />
+</div>
+<div id="ratio-scale" class="section level3 hasAnchor" number="5.3.4">
+<h3><span class="header-section-number">5.3.4</span> Ratio Scale<a href="chapter-2-data-and-data-collection.html#ratio-scale" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Ordered, measurable, true zero.</p>
+<p>Example:
+- Income<br />
+- Height<br />
+- Sales revenue</p>
+<p>Most statistical methods require ratio scale data.</p>
+<hr />
+</div>
+</div>
+<div id="population-vs-sample-1" class="section level2 hasAnchor" number="5.4">
+<h2><span class="header-section-number">5.4</span> Population vs Sample<a href="chapter-2-data-and-data-collection.html#population-vs-sample-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="population" class="section level3 hasAnchor" number="5.4.1">
+<h3><span class="header-section-number">5.4.1</span> Population<a href="chapter-2-data-and-data-collection.html#population" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Entire group of interest.</p>
+<p>Example:
+All customers of an e-commerce company.</p>
+</div>
+<div id="sample" class="section level3 hasAnchor" number="5.4.2">
+<h3><span class="header-section-number">5.4.2</span> Sample<a href="chapter-2-data-and-data-collection.html#sample" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Subset of population used for analysis.</p>
+<p>Example:
+Surveying 2,000 customers from 1 million.</p>
+<p>Why use samples?</p>
+<ul>
+<li>Cheaper<br />
+</li>
+<li>Faster<br />
+</li>
+<li>Practical</li>
+</ul>
+<p>Statistics allows us to generalize from sample to population.</p>
+<hr />
+</div>
+</div>
+<div id="census-vs-sampling" class="section level2 hasAnchor" number="5.5">
+<h2><span class="header-section-number">5.5</span> Census vs Sampling<a href="chapter-2-data-and-data-collection.html#census-vs-sampling" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="census" class="section level3 hasAnchor" number="5.5.1">
+<h3><span class="header-section-number">5.5.1</span> Census<a href="chapter-2-data-and-data-collection.html#census" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Collect data from entire population.</p>
+<p>Example:
+National census.</p>
+</div>
+<div id="sampling" class="section level3 hasAnchor" number="5.5.2">
+<h3><span class="header-section-number">5.5.2</span> Sampling<a href="chapter-2-data-and-data-collection.html#sampling" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Collect data from a subset.</p>
+<p>Most businesses use sampling.</p>
+<p>Sampling is powerful — but dangerous if done incorrectly.</p>
+<hr />
+</div>
+</div>
+<div id="sampling-techniques" class="section level2 hasAnchor" number="5.6">
+<h2><span class="header-section-number">5.6</span> Sampling Techniques<a href="chapter-2-data-and-data-collection.html#sampling-techniques" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="simple-random-sampling" class="section level3 hasAnchor" number="5.6.1">
+<h3><span class="header-section-number">5.6.1</span> Simple Random Sampling<a href="chapter-2-data-and-data-collection.html#simple-random-sampling" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Every individual has equal chance.</p>
+<p>Example simulation:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="chapter-2-data-and-data-collection.html#cb13-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb13-2"><a href="chapter-2-data-and-data-collection.html#cb13-2" tabindex="-1"></a>population <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10000</span></span>
+<span id="cb13-3"><a href="chapter-2-data-and-data-collection.html#cb13-3" tabindex="-1"></a>sample_data <span class="ot">&lt;-</span> <span class="fu">sample</span>(population, <span class="dv">100</span>)</span>
+<span id="cb13-4"><a href="chapter-2-data-and-data-collection.html#cb13-4" tabindex="-1"></a><span class="fu">head</span>(sample_data)</span></code></pre></div>
+<pre><code>## [1] 2463 2511 8718 2986 1842 9334</code></pre>
+<hr />
+</div>
+<div id="stratified-sampling" class="section level3 hasAnchor" number="5.6.2">
+<h3><span class="header-section-number">5.6.2</span> Stratified Sampling<a href="chapter-2-data-and-data-collection.html#stratified-sampling" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Divide population into groups, then sample from each group.</p>
+<p>Example:
+- Male / Female<br />
+- Region<br />
+- Age group</p>
+<p>Used to ensure representation.</p>
+<hr />
+</div>
+<div id="systematic-sampling" class="section level3 hasAnchor" number="5.6.3">
+<h3><span class="header-section-number">5.6.3</span> Systematic Sampling<a href="chapter-2-data-and-data-collection.html#systematic-sampling" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Select every k-th element.</p>
+<p>Example:
+Every 10th customer.</p>
+<hr />
+</div>
+<div id="cluster-sampling" class="section level3 hasAnchor" number="5.6.4">
+<h3><span class="header-section-number">5.6.4</span> Cluster Sampling<a href="chapter-2-data-and-data-collection.html#cluster-sampling" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Select entire groups randomly.</p>
+<p>Example:
+Choose 5 stores and survey all customers there.</p>
+<hr />
+</div>
+</div>
+<div id="sampling-bias" class="section level2 hasAnchor" number="5.7">
+<h2><span class="header-section-number">5.7</span> Sampling Bias<a href="chapter-2-data-and-data-collection.html#sampling-bias" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Bias occurs when the sample does not represent the population.</p>
+<p>Example:</p>
+<p>Survey only online users → ignores offline customers.</p>
+<p>In machine learning:</p>
+<p>If training data is biased, the model becomes biased.</p>
+<p>Real-world example:
+Facial recognition systems failing due to non-diverse training data.</p>
+<p>Bias leads to systematic error.</p>
+<hr />
+</div>
+<div id="types-of-errors" class="section level2 hasAnchor" number="5.8">
+<h2><span class="header-section-number">5.8</span> Types of Errors<a href="chapter-2-data-and-data-collection.html#types-of-errors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="sampling-error" class="section level3 hasAnchor" number="5.8.1">
+<h3><span class="header-section-number">5.8.1</span> Sampling Error<a href="chapter-2-data-and-data-collection.html#sampling-error" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Difference between sample statistic and population parameter.</p>
+<p>Unavoidable but measurable.</p>
+<hr />
+</div>
+<div id="non-sampling-error" class="section level3 hasAnchor" number="5.8.2">
+<h3><span class="header-section-number">5.8.2</span> Non-Sampling Error<a href="chapter-2-data-and-data-collection.html#non-sampling-error" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Data entry mistakes<br />
+</li>
+<li>Poor survey design<br />
+</li>
+<li>Measurement error</li>
+</ul>
+<p>Often more dangerous than sampling error.</p>
+<hr />
+</div>
+</div>
+<div id="business-case-study" class="section level2 hasAnchor" number="5.9">
+<h2><span class="header-section-number">5.9</span> Business Case Study<a href="chapter-2-data-and-data-collection.html#business-case-study" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Imagine an online retailer.</p>
+<p>They survey only customers who purchased in the last week.</p>
+<p>Is this sample representative?</p>
+<p>No.</p>
+<p>Inactive customers are ignored.</p>
+<p>Marketing decisions based on this data may be flawed.</p>
+<hr />
+</div>
+<div id="ml-dataset-bias-example" class="section level2 hasAnchor" number="5.10">
+<h2><span class="header-section-number">5.10</span> ML Dataset Bias Example<a href="chapter-2-data-and-data-collection.html#ml-dataset-bias-example" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Suppose you train a loan approval model using:</p>
+<ul>
+<li>Mostly urban applicants<br />
+</li>
+<li>Few rural applicants</li>
+</ul>
+<p>The model learns patterns biased toward urban behavior.</p>
+<p>Result:
+Unfair decisions.</p>
+<p>Statistics teaches us:</p>
+<p>Data collection quality determines model fairness.</p>
+<hr />
+</div>
+<div id="why-this-chapter-matters" class="section level2 hasAnchor" number="5.11">
+<h2><span class="header-section-number">5.11</span> Why This Chapter Matters<a href="chapter-2-data-and-data-collection.html#why-this-chapter-matters" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Most analytical errors do not come from complex math.</p>
+<p>They come from:</p>
+<ul>
+<li>Poor sampling<br />
+</li>
+<li>Biased data<br />
+</li>
+<li>Misunderstood measurement scales</li>
+</ul>
+<p>If data is wrong, analysis will be wrong.</p>
+<p>Garbage in → garbage out.</p>
+<hr />
+</div>
+<div id="summary" class="section level2 hasAnchor" number="5.12">
+<h2><span class="header-section-number">5.12</span> Summary<a href="chapter-2-data-and-data-collection.html#summary" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In this chapter we learned:</p>
+<ul>
+<li>Types of data<br />
+</li>
+<li>Measurement scales<br />
+</li>
+<li>Population vs sample<br />
+</li>
+<li>Sampling techniques<br />
+</li>
+<li>Bias and errors<br />
+</li>
+<li>Business implications<br />
+</li>
+<li>Machine learning fairness connection</li>
+</ul>
+<p>Next: Descriptive statistics.</p>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="how-to-use-this-book.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="chapter-1-introduction-to-statistics.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="chapter-1-introduction-to-statistics.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

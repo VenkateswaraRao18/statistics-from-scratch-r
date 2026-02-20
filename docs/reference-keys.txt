@@ -22,6 +22,7 @@ statistics-in-machine-learning
 the-big-picture
 what-you-will-learn-in-this-book
 final-thought
+chapter-2-data-and-data-collection
 what-is-data-1
 types-of-data
 qualitative-categorical-data
