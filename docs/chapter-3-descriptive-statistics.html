@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2 How to Use This Book | Statistics From Scratch (Theory + R + ML)</title>
-  <meta name="description" content="2 How to Use This Book | Statistics From Scratch (Theory + R + ML)" />
+  <title>6 Chapter 3: Descriptive Statistics | Statistics From Scratch (Theory + R + ML)</title>
+  <meta name="description" content="6 Chapter 3: Descriptive Statistics | Statistics From Scratch (Theory + R + ML)" />
   <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2 How to Use This Book | Statistics From Scratch (Theory + R + ML)" />
+  <meta property="og:title" content="6 Chapter 3: Descriptive Statistics | Statistics From Scratch (Theory + R + ML)" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2 How to Use This Book | Statistics From Scratch (Theory + R + ML)" />
+  <meta name="twitter:title" content="6 Chapter 3: Descriptive Statistics | Statistics From Scratch (Theory + R + ML)" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="roadmap.html"/>
+<link rel="prev" href="chapter-2-data-and-data-collection.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -256,25 +256,326 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="how-to-use-this-book" class="section level1 hasAnchor" number="2">
-<h1><span class="header-section-number">2</span> How to Use This Book<a href="how-to-use-this-book.html#how-to-use-this-book" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="chapter-3-descriptive-statistics" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">6</span> Chapter 3: Descriptive Statistics<a href="chapter-3-descriptive-statistics.html#chapter-3-descriptive-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Descriptive statistics answers the first fundamental question:</p>
+<p>“What does our data look like?”</p>
+<p>Before building models, we must understand the structure of data.</p>
+<p>Descriptive statistics summarizes, organizes, and visualizes data.</p>
+<hr />
+<div id="what-is-descriptive-statistics" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> What Is Descriptive Statistics?<a href="chapter-3-descriptive-statistics.html#what-is-descriptive-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Descriptive statistics focuses only on the dataset we currently have.</p>
+<p>It does not make generalizations beyond it.</p>
+<p>It answers:</p>
+<ul>
+<li>What is the average?</li>
+<li>How spread out is the data?</li>
+<li>What values occur most frequently?</li>
+<li>What is the shape of the distribution?</li>
+</ul>
+<hr />
+</div>
+<div id="measures-of-central-tendency" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Measures of Central Tendency<a href="chapter-3-descriptive-statistics.html#measures-of-central-tendency" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Central tendency describes the “center” of data.</p>
+<p>There are three main measures:</p>
 <ol style="list-style-type: decimal">
-<li>Read intuition carefully<br />
-</li>
-<li>Run the R code<br />
-</li>
-<li>Think about business application<br />
-</li>
-<li>Connect to ML concepts</li>
+<li>Mean</li>
+<li>Median</li>
+<li>Mode</li>
 </ol>
+<hr />
+<div id="mean-average" class="section level3 hasAnchor" number="6.2.1">
+<h3><span class="header-section-number">6.2.1</span> Mean (Average)<a href="chapter-3-descriptive-statistics.html#mean-average" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The mean is the arithmetic average.</p>
+<p>Formula:</p>
+<p><span class="math display">\[
+\bar{x} = \frac{\sum x_i}{n}
+\]</span></p>
+<p>Where:
+- <span class="math inline">\(x_i\)</span> = each observation
+- <span class="math inline">\(n\)</span> = number of observations</p>
+<p>Example:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="chapter-3-descriptive-statistics.html#cb15-1" tabindex="-1"></a>sales <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">120</span>, <span class="dv">135</span>, <span class="dv">150</span>, <span class="dv">98</span>, <span class="dv">175</span>, <span class="dv">142</span>)</span>
+<span id="cb15-2"><a href="chapter-3-descriptive-statistics.html#cb15-2" tabindex="-1"></a><span class="fu">mean</span>(sales)</span></code></pre></div>
+<pre><code>## [1] 136.6667</code></pre>
+<p>Interpretation:</p>
+<p>The mean represents the balance point of the data.</p>
+<p>Business meaning:</p>
+<p>If average daily sales = 137,<br />
+we expect around that value on a typical day.</p>
+<hr />
+</div>
+<div id="median" class="section level3 hasAnchor" number="6.2.2">
+<h3><span class="header-section-number">6.2.2</span> Median<a href="chapter-3-descriptive-statistics.html#median" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The median is the middle value when data is ordered.</p>
+<p>Example:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="chapter-3-descriptive-statistics.html#cb17-1" tabindex="-1"></a><span class="fu">median</span>(sales)</span></code></pre></div>
+<pre><code>## [1] 138.5</code></pre>
+<p>Why median matters:</p>
+<p>The median is resistant to outliers.</p>
+<p>Example:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="chapter-3-descriptive-statistics.html#cb19-1" tabindex="-1"></a>sales_with_outlier <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">120</span>, <span class="dv">135</span>, <span class="dv">150</span>, <span class="dv">98</span>, <span class="dv">175</span>, <span class="dv">142</span>, <span class="dv">1000</span>)</span>
+<span id="cb19-2"><a href="chapter-3-descriptive-statistics.html#cb19-2" tabindex="-1"></a><span class="fu">mean</span>(sales_with_outlier)</span></code></pre></div>
+<pre><code>## [1] 260</code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="chapter-3-descriptive-statistics.html#cb21-1" tabindex="-1"></a><span class="fu">median</span>(sales_with_outlier)</span></code></pre></div>
+<pre><code>## [1] 142</code></pre>
+<p>The mean increases dramatically.<br />
+The median remains stable.</p>
+<p>In skewed distributions, median is more reliable.</p>
+<hr />
+</div>
+<div id="mode" class="section level3 hasAnchor" number="6.2.3">
+<h3><span class="header-section-number">6.2.3</span> Mode<a href="chapter-3-descriptive-statistics.html#mode" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The mode is the most frequent value.</p>
+<p>Example:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="chapter-3-descriptive-statistics.html#cb23-1" tabindex="-1"></a>values <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>)</span>
+<span id="cb23-2"><a href="chapter-3-descriptive-statistics.html#cb23-2" tabindex="-1"></a><span class="fu">table</span>(values)</span></code></pre></div>
+<pre><code>## values
+## 10 20 30 40 
+##  1  2  1  1</code></pre>
+<p>Mode is useful for categorical data.</p>
+<p>Example:
+Most common product category.</p>
+<hr />
+</div>
+</div>
+<div id="comparing-mean-median-mode" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Comparing Mean, Median, Mode<a href="chapter-3-descriptive-statistics.html#comparing-mean-median-mode" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>If:</p>
+<p>Mean ≈ Median ≈ Mode → symmetric distribution</p>
+<p>If:</p>
+<p>Mean &gt; Median → right skewed distribution</p>
+<p>If:</p>
+<p>Mean &lt; Median → left skewed distribution</p>
+<p>Understanding this helps detect skewness and outliers.</p>
+<hr />
+</div>
+<div id="measures-of-dispersion" class="section level2 hasAnchor" number="6.4">
+<h2><span class="header-section-number">6.4</span> Measures of Dispersion<a href="chapter-3-descriptive-statistics.html#measures-of-dispersion" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Central tendency tells us the center.</p>
+<p>Dispersion tells us variability.</p>
+<p>Why does variability matter?</p>
+<p>Two companies may have the same average revenue,
+but one may be highly unstable.</p>
+<p>Key measures:</p>
+<ol style="list-style-type: decimal">
+<li>Range</li>
+<li>Variance</li>
+<li>Standard Deviation</li>
+<li>Coefficient of Variation</li>
+</ol>
+<hr />
+<div id="range" class="section level3 hasAnchor" number="6.4.1">
+<h3><span class="header-section-number">6.4.1</span> Range<a href="chapter-3-descriptive-statistics.html#range" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Range = Maximum − Minimum</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="chapter-3-descriptive-statistics.html#cb25-1" tabindex="-1"></a><span class="fu">range</span>(sales)</span></code></pre></div>
+<pre><code>## [1]  98 175</code></pre>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="chapter-3-descriptive-statistics.html#cb27-1" tabindex="-1"></a><span class="fu">diff</span>(<span class="fu">range</span>(sales))</span></code></pre></div>
+<pre><code>## [1] 77</code></pre>
+<p>Problem:</p>
+<p>Range depends only on extreme values.</p>
+<hr />
+</div>
+<div id="variance" class="section level3 hasAnchor" number="6.4.2">
+<h3><span class="header-section-number">6.4.2</span> Variance<a href="chapter-3-descriptive-statistics.html#variance" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Variance measures average squared deviation from the mean.</p>
+<p>Formula:</p>
+<p><span class="math display">\[
+s^2 = \frac{\sum (x_i - \bar{x})^2}{n - 1}
+\]</span></p>
+<p>Example:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="chapter-3-descriptive-statistics.html#cb29-1" tabindex="-1"></a><span class="fu">var</span>(sales)</span></code></pre></div>
+<pre><code>## [1] 690.2667</code></pre>
+<p>Why square differences?</p>
+<p>Because positive and negative deviations would cancel out.</p>
+<hr />
+</div>
+<div id="standard-deviation" class="section level3 hasAnchor" number="6.4.3">
+<h3><span class="header-section-number">6.4.3</span> Standard Deviation<a href="chapter-3-descriptive-statistics.html#standard-deviation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Standard deviation is the square root of variance.</p>
+<p><span class="math display">\[
+s = \sqrt{s^2}
+\]</span></p>
+<p>Example:</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="chapter-3-descriptive-statistics.html#cb31-1" tabindex="-1"></a><span class="fu">sd</span>(sales)</span></code></pre></div>
+<pre><code>## [1] 26.27293</code></pre>
+<p>Interpretation:</p>
+<p>Standard deviation measures average distance from the mean.</p>
+<p>Low SD → stable data<br />
+High SD → volatile data</p>
+<p>Finance example:
+High SD = high risk</p>
+<p>Machine learning example:
+High variance → risk of overfitting</p>
+<hr />
+</div>
+<div id="coefficient-of-variation-cv" class="section level3 hasAnchor" number="6.4.4">
+<h3><span class="header-section-number">6.4.4</span> Coefficient of Variation (CV)<a href="chapter-3-descriptive-statistics.html#coefficient-of-variation-cv" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>CV allows comparison across scales.</p>
+<p><span class="math display">\[
+CV = \frac{s}{\bar{x}}
+\]</span></p>
+<p>Example:</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="chapter-3-descriptive-statistics.html#cb33-1" tabindex="-1"></a><span class="fu">sd</span>(sales) <span class="sc">/</span> <span class="fu">mean</span>(sales)</span></code></pre></div>
+<pre><code>## [1] 0.1922409</code></pre>
+<p>Used when comparing variability of different datasets.</p>
+<hr />
+</div>
+</div>
+<div id="frequency-distribution" class="section level2 hasAnchor" number="6.5">
+<h2><span class="header-section-number">6.5</span> Frequency Distribution<a href="chapter-3-descriptive-statistics.html#frequency-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Frequency distribution organizes data into categories or intervals.</p>
+<p>Example:</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="chapter-3-descriptive-statistics.html#cb35-1" tabindex="-1"></a><span class="fu">table</span>(category)</span></code></pre></div>
+<pre><code>## category
+##    Clothing Electronics   Groceries 
+##           1           2           1</code></pre>
+<p>For numerical data:</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="chapter-3-descriptive-statistics.html#cb37-1" tabindex="-1"></a><span class="fu">hist</span>(sales)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-16-1.png" alt="" width="672" /></p>
+<p>This shows how often values fall into intervals.</p>
+<hr />
+</div>
+<div id="graphical-representation" class="section level2 hasAnchor" number="6.6">
+<h2><span class="header-section-number">6.6</span> Graphical Representation<a href="chapter-3-descriptive-statistics.html#graphical-representation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Visualization reveals patterns not visible in numbers.</p>
+<hr />
+<div id="bar-chart-categorical-data" class="section level3 hasAnchor" number="6.6.1">
+<h3><span class="header-section-number">6.6.1</span> Bar Chart (Categorical Data)<a href="chapter-3-descriptive-statistics.html#bar-chart-categorical-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="chapter-3-descriptive-statistics.html#cb38-1" tabindex="-1"></a><span class="fu">barplot</span>(<span class="fu">table</span>(category))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-17-1.png" alt="" width="672" /></p>
+<p>Used for:
+- Product categories
+- Customer segments</p>
+<hr />
+</div>
+<div id="histogram-numerical-data" class="section level3 hasAnchor" number="6.6.2">
+<h3><span class="header-section-number">6.6.2</span> Histogram (Numerical Data)<a href="chapter-3-descriptive-statistics.html#histogram-numerical-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="chapter-3-descriptive-statistics.html#cb39-1" tabindex="-1"></a><span class="fu">hist</span>(sales, <span class="at">col=</span><span class="st">&quot;lightblue&quot;</span>, <span class="at">main=</span><span class="st">&quot;Sales Distribution&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-18-1.png" alt="" width="672" /></p>
+<p>Used to detect:
+- Skewness
+- Outliers
+- Shape of distribution</p>
+<hr />
+</div>
+<div id="boxplot" class="section level3 hasAnchor" number="6.6.3">
+<h3><span class="header-section-number">6.6.3</span> Boxplot<a href="chapter-3-descriptive-statistics.html#boxplot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="chapter-3-descriptive-statistics.html#cb40-1" tabindex="-1"></a><span class="fu">boxplot</span>(sales, <span class="at">col=</span><span class="st">&quot;orange&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-19-1.png" alt="" width="672" /></p>
+<p>Boxplot shows:</p>
+<ul>
+<li>Median</li>
+<li>Quartiles</li>
+<li>Outliers</li>
+</ul>
+<p>Very useful in exploratory data analysis.</p>
+<hr />
+</div>
+</div>
+<div id="shape-of-distribution" class="section level2 hasAnchor" number="6.7">
+<h2><span class="header-section-number">6.7</span> Shape of Distribution<a href="chapter-3-descriptive-statistics.html#shape-of-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Distribution shape affects statistical decisions.</p>
+<p>Three common shapes:</p>
+<ol style="list-style-type: decimal">
+<li>Symmetric</li>
+<li>Right-skewed</li>
+<li>Left-skewed</li>
+</ol>
+<p>Right-skew example:
+Income distribution</p>
+<p>Left-skew example:
+Very easy exam scores</p>
+<p>Machine learning impact:</p>
+<p>Many algorithms assume normal distribution.</p>
+<p>Understanding distribution helps in:</p>
+<ul>
+<li>Feature transformation</li>
+<li>Normalization</li>
+<li>Log transformation</li>
+</ul>
+<hr />
+</div>
+<div id="real-business-case" class="section level2 hasAnchor" number="6.8">
+<h2><span class="header-section-number">6.8</span> Real Business Case<a href="chapter-3-descriptive-statistics.html#real-business-case" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Two companies:</p>
+<p>Company A:
+Mean profit = 1M<br />
+Standard deviation = 50K</p>
+<p>Company B:
+Mean profit = 1M<br />
+Standard deviation = 500K</p>
+<p>Both have same average.</p>
+<p>But B is riskier.</p>
+<p>Descriptive statistics reveals stability.</p>
+<hr />
+</div>
+<div id="descriptive-statistics-in-machine-learning" class="section level2 hasAnchor" number="6.9">
+<h2><span class="header-section-number">6.9</span> Descriptive Statistics in Machine Learning<a href="chapter-3-descriptive-statistics.html#descriptive-statistics-in-machine-learning" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Before training any model, we must:</p>
+<ul>
+<li>Check feature distribution</li>
+<li>Detect outliers</li>
+<li>Understand scale differences</li>
+<li>Standardize variables</li>
+<li>Identify skewness</li>
+</ul>
+<p>Example:</p>
+<p>Standardization:</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="chapter-3-descriptive-statistics.html#cb41-1" tabindex="-1"></a>scaled_sales <span class="ot">&lt;-</span> <span class="fu">scale</span>(sales)</span>
+<span id="cb41-2"><a href="chapter-3-descriptive-statistics.html#cb41-2" tabindex="-1"></a>scaled_sales</span></code></pre></div>
+<pre><code>##             [,1]
+## [1,] -0.63436659
+## [2,] -0.06343666
+## [3,]  0.50749327
+## [4,] -1.47173048
+## [5,]  1.45904315
+## [6,]  0.20299731
+## attr(,&quot;scaled:center&quot;)
+## [1] 136.6667
+## attr(,&quot;scaled:scale&quot;)
+## [1] 26.27293</code></pre>
+<p>Standardization ensures:</p>
+<p>Mean = 0<br />
+Standard deviation = 1</p>
+<p>This is critical for:</p>
+<ul>
+<li>Logistic regression</li>
+<li>SVM</li>
+<li>Neural networks</li>
+<li>K-means clustering</li>
+</ul>
+<p>Descriptive statistics is the foundation of feature engineering.</p>
+<hr />
+</div>
+<div id="summary-1" class="section level2 hasAnchor" number="6.10">
+<h2><span class="header-section-number">6.10</span> Summary<a href="chapter-3-descriptive-statistics.html#summary-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In this chapter, we learned:</p>
+<ul>
+<li>Mean, Median, Mode</li>
+<li>Range, Variance, Standard Deviation</li>
+<li>Coefficient of Variation</li>
+<li>Frequency distributions</li>
+<li>Histograms and boxplots</li>
+<li>Distribution shape</li>
+<li>Business risk interpretation</li>
+<li>Machine learning relevance</li>
+</ul>
+<p>Descriptive statistics helps us understand data before making decisions.</p>
+<p>Next:
+We move into Probability — the backbone of inferential statistics.</p>
+
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="roadmap.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="chapter-2-data-and-data-collection.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -1,0 +1,407 @@
+# Chapter 3: Descriptive Statistics
+
+Descriptive statistics answers the first fundamental question:
+
+"What does our data look like?"
+
+Before building models, we must understand the structure of data.
+
+Descriptive statistics summarizes, organizes, and visualizes data.
+
+---
+
+## What Is Descriptive Statistics?
+
+Descriptive statistics focuses only on the dataset we currently have.
+
+It does not make generalizations beyond it.
+
+It answers:
+
+- What is the average?
+- How spread out is the data?
+- What values occur most frequently?
+- What is the shape of the distribution?
+
+---
+
+## Measures of Central Tendency
+
+Central tendency describes the "center" of data.
+
+There are three main measures:
+
+1. Mean
+2. Median
+3. Mode
+
+---
+
+### Mean (Average)
+
+The mean is the arithmetic average.
+
+Formula:
+
+\[
+\bar{x} = \frac{\sum x_i}{n}
+\]
+
+Where:
+- \( x_i \) = each observation
+- \( n \) = number of observations
+
+Example:
+
+```{r}
+sales <- c(120, 135, 150, 98, 175, 142)
+mean(sales)
+```
+
+Interpretation:
+
+The mean represents the balance point of the data.
+
+Business meaning:
+
+If average daily sales = 137,  
+we expect around that value on a typical day.
+
+---
+
+### Median
+
+The median is the middle value when data is ordered.
+
+Example:
+
+```{r}
+median(sales)
+```
+
+Why median matters:
+
+The median is resistant to outliers.
+
+Example:
+
+```{r}
+sales_with_outlier <- c(120, 135, 150, 98, 175, 142, 1000)
+mean(sales_with_outlier)
+median(sales_with_outlier)
+```
+
+The mean increases dramatically.  
+The median remains stable.
+
+In skewed distributions, median is more reliable.
+
+---
+
+### Mode
+
+The mode is the most frequent value.
+
+Example:
+
+```{r}
+values <- c(10, 20, 20, 30, 40)
+table(values)
+```
+
+Mode is useful for categorical data.
+
+Example:
+Most common product category.
+
+---
+
+## Comparing Mean, Median, Mode
+
+If:
+
+Mean ≈ Median ≈ Mode → symmetric distribution
+
+If:
+
+Mean > Median → right skewed distribution
+
+If:
+
+Mean < Median → left skewed distribution
+
+Understanding this helps detect skewness and outliers.
+
+---
+
+## Measures of Dispersion
+
+Central tendency tells us the center.
+
+Dispersion tells us variability.
+
+Why does variability matter?
+
+Two companies may have the same average revenue,
+but one may be highly unstable.
+
+Key measures:
+
+1. Range
+2. Variance
+3. Standard Deviation
+4. Coefficient of Variation
+
+---
+
+### Range
+
+Range = Maximum − Minimum
+
+```{r}
+range(sales)
+diff(range(sales))
+```
+
+Problem:
+
+Range depends only on extreme values.
+
+---
+
+### Variance
+
+Variance measures average squared deviation from the mean.
+
+Formula:
+
+\[
+s^2 = \frac{\sum (x_i - \bar{x})^2}{n - 1}
+\]
+
+Example:
+
+```{r}
+var(sales)
+```
+
+Why square differences?
+
+Because positive and negative deviations would cancel out.
+
+---
+
+### Standard Deviation
+
+Standard deviation is the square root of variance.
+
+\[
+s = \sqrt{s^2}
+\]
+
+Example:
+
+```{r}
+sd(sales)
+```
+
+Interpretation:
+
+Standard deviation measures average distance from the mean.
+
+Low SD → stable data  
+High SD → volatile data
+
+Finance example:
+High SD = high risk
+
+Machine learning example:
+High variance → risk of overfitting
+
+---
+
+### Coefficient of Variation (CV)
+
+CV allows comparison across scales.
+
+\[
+CV = \frac{s}{\bar{x}}
+\]
+
+Example:
+
+```{r}
+sd(sales) / mean(sales)
+```
+
+Used when comparing variability of different datasets.
+
+---
+
+## Frequency Distribution
+
+Frequency distribution organizes data into categories or intervals.
+
+Example:
+
+```{r}
+table(category)
+```
+
+For numerical data:
+
+```{r}
+hist(sales)
+```
+
+This shows how often values fall into intervals.
+
+---
+
+## Graphical Representation
+
+Visualization reveals patterns not visible in numbers.
+
+---
+
+### Bar Chart (Categorical Data)
+
+```{r}
+barplot(table(category))
+```
+
+Used for:
+- Product categories
+- Customer segments
+
+---
+
+### Histogram (Numerical Data)
+
+```{r}
+hist(sales, col="lightblue", main="Sales Distribution")
+```
+
+Used to detect:
+- Skewness
+- Outliers
+- Shape of distribution
+
+---
+
+### Boxplot
+
+```{r}
+boxplot(sales, col="orange")
+```
+
+Boxplot shows:
+
+- Median
+- Quartiles
+- Outliers
+
+Very useful in exploratory data analysis.
+
+---
+
+## Shape of Distribution
+
+Distribution shape affects statistical decisions.
+
+Three common shapes:
+
+1. Symmetric
+2. Right-skewed
+3. Left-skewed
+
+Right-skew example:
+Income distribution
+
+Left-skew example:
+Very easy exam scores
+
+Machine learning impact:
+
+Many algorithms assume normal distribution.
+
+Understanding distribution helps in:
+
+- Feature transformation
+- Normalization
+- Log transformation
+
+---
+
+## Real Business Case
+
+Two companies:
+
+Company A:
+Mean profit = 1M  
+Standard deviation = 50K  
+
+Company B:
+Mean profit = 1M  
+Standard deviation = 500K  
+
+Both have same average.
+
+But B is riskier.
+
+Descriptive statistics reveals stability.
+
+---
+
+## Descriptive Statistics in Machine Learning
+
+Before training any model, we must:
+
+- Check feature distribution
+- Detect outliers
+- Understand scale differences
+- Standardize variables
+- Identify skewness
+
+Example:
+
+Standardization:
+
+```{r}
+scaled_sales <- scale(sales)
+scaled_sales
+```
+
+Standardization ensures:
+
+Mean = 0  
+Standard deviation = 1  
+
+This is critical for:
+
+- Logistic regression
+- SVM
+- Neural networks
+- K-means clustering
+
+Descriptive statistics is the foundation of feature engineering.
+
+---
+
+## Summary
+
+In this chapter, we learned:
+
+- Mean, Median, Mode
+- Range, Variance, Standard Deviation
+- Coefficient of Variation
+- Frequency distributions
+- Histograms and boxplots
+- Distribution shape
+- Business risk interpretation
+- Machine learning relevance
+
+Descriptive statistics helps us understand data before making decisions.
+
+Next:
+We move into Probability — the backbone of inferential statistics.

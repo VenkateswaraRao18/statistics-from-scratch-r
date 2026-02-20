@@ -2,3 +2,4 @@ rmd_files:
   - index.Rmd
   - book/01_introduction.Rmd
   - book/02_data_collection.Rmd
+  - book/03_descriptive_statistics.Rmd
