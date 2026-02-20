@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>6 Chapter 3: Descriptive Statistics | Statistics From Scratch (Theory + R + ML)</title>
-  <meta name="description" content="6 Chapter 3: Descriptive Statistics | Statistics From Scratch (Theory + R + ML)" />
+  <title>9 Measures of Dispersion | Statistics From Scratch (Theory + R + ML)</title>
+  <meta name="description" content="9 Measures of Dispersion | Statistics From Scratch (Theory + R + ML)" />
   <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="6 Chapter 3: Descriptive Statistics | Statistics From Scratch (Theory + R + ML)" />
+  <meta property="og:title" content="9 Measures of Dispersion | Statistics From Scratch (Theory + R + ML)" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="6 Chapter 3: Descriptive Statistics | Statistics From Scratch (Theory + R + ML)" />
+  <meta name="twitter:title" content="9 Measures of Dispersion | Statistics From Scratch (Theory + R + ML)" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="chapter-2-data-and-data-collection.html"/>
-<link rel="next" href="measures-of-central-tendency.html"/>
+<link rel="prev" href="comparing-mean-and-median.html"/>
+<link rel="next" href="frequency-distribution.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -264,31 +264,49 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="chapter-3-descriptive-statistics" class="section level1 hasAnchor" number="6">
-<h1><span class="header-section-number">6</span> Chapter 3: Descriptive Statistics<a href="chapter-3-descriptive-statistics.html#chapter-3-descriptive-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Descriptive statistics answers the question:</p>
-<p>“What does our data look like?”</p>
-<p>Before building models, we must understand the structure of data.</p>
+<div id="measures-of-dispersion" class="section level1 hasAnchor" number="9">
+<h1><span class="header-section-number">9</span> Measures of Dispersion<a href="measures-of-dispersion.html#measures-of-dispersion" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Central tendency shows center.
+Dispersion shows variability.</p>
 <hr />
-<div id="create-sample-data" class="section level2 hasAnchor" number="6.1">
-<h2><span class="header-section-number">6.1</span> Create Sample Data<a href="chapter-3-descriptive-statistics.html#create-sample-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>To make this chapter self-contained, we define data here.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="chapter-3-descriptive-statistics.html#cb15-1" tabindex="-1"></a>sales <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">120</span>, <span class="dv">135</span>, <span class="dv">150</span>, <span class="dv">98</span>, <span class="dv">175</span>, <span class="dv">142</span>)</span>
-<span id="cb15-2"><a href="chapter-3-descriptive-statistics.html#cb15-2" tabindex="-1"></a>category <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Electronics&quot;</span>, <span class="st">&quot;Clothing&quot;</span>, <span class="st">&quot;Electronics&quot;</span>, </span>
-<span id="cb15-3"><a href="chapter-3-descriptive-statistics.html#cb15-3" tabindex="-1"></a>              <span class="st">&quot;Groceries&quot;</span>, <span class="st">&quot;Clothing&quot;</span>, <span class="st">&quot;Electronics&quot;</span>)</span></code></pre></div>
+<div id="range" class="section level2 hasAnchor" number="9.1">
+<h2><span class="header-section-number">9.1</span> Range<a href="measures-of-dispersion.html#range" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="measures-of-dispersion.html#cb26-1" tabindex="-1"></a><span class="fu">range</span>(sales)</span></code></pre></div>
+<pre><code>## [1]  98 175</code></pre>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="measures-of-dispersion.html#cb28-1" tabindex="-1"></a><span class="fu">diff</span>(<span class="fu">range</span>(sales))</span></code></pre></div>
+<pre><code>## [1] 77</code></pre>
+<p>Range depends only on extreme values.</p>
 <hr />
 </div>
-<div id="what-is-descriptive-statistics" class="section level2 hasAnchor" number="6.2">
-<h2><span class="header-section-number">6.2</span> What Is Descriptive Statistics?<a href="chapter-3-descriptive-statistics.html#what-is-descriptive-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Descriptive statistics summarizes and visualizes data.</p>
-<p>It does NOT make predictions about populations.</p>
-<p>It answers:</p>
-<ul>
-<li>What is the average?</li>
-<li>How spread out is the data?</li>
-<li>What values occur most often?</li>
-<li>What does the distribution look like?</li>
-</ul>
+<div id="variance" class="section level2 hasAnchor" number="9.2">
+<h2><span class="header-section-number">9.2</span> Variance<a href="measures-of-dispersion.html#variance" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><span class="math display">\[
+s^2 = \frac{\sum (x_i - \bar{x})^2}{n - 1}
+\]</span></p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="measures-of-dispersion.html#cb30-1" tabindex="-1"></a><span class="fu">var</span>(sales)</span></code></pre></div>
+<pre><code>## [1] 690.2667</code></pre>
+<p>Variance measures average squared deviation.</p>
+<hr />
+</div>
+<div id="standard-deviation" class="section level2 hasAnchor" number="9.3">
+<h2><span class="header-section-number">9.3</span> Standard Deviation<a href="measures-of-dispersion.html#standard-deviation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><span class="math display">\[
+s = \sqrt{s^2}
+\]</span></p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="measures-of-dispersion.html#cb32-1" tabindex="-1"></a><span class="fu">sd</span>(sales)</span></code></pre></div>
+<pre><code>## [1] 26.27293</code></pre>
+<p>Low SD → stable data<br />
+High SD → volatile data</p>
+<hr />
+</div>
+<div id="coefficient-of-variation" class="section level2 hasAnchor" number="9.4">
+<h2><span class="header-section-number">9.4</span> Coefficient of Variation<a href="measures-of-dispersion.html#coefficient-of-variation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><span class="math display">\[
+CV = \frac{s}{\bar{x}}
+\]</span></p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="measures-of-dispersion.html#cb34-1" tabindex="-1"></a><span class="fu">sd</span>(sales) <span class="sc">/</span> <span class="fu">mean</span>(sales)</span></code></pre></div>
+<pre><code>## [1] 0.1922409</code></pre>
+<p>Used for comparing variability across scales.</p>
 <hr />
 </div>
 </div>
@@ -297,8 +315,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="chapter-2-data-and-data-collection.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="measures-of-central-tendency.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="comparing-mean-and-median.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="frequency-distribution.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

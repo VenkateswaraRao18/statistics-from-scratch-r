@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>6 Chapter 3: Descriptive Statistics | Statistics From Scratch (Theory + R + ML)</title>
-  <meta name="description" content="6 Chapter 3: Descriptive Statistics | Statistics From Scratch (Theory + R + ML)" />
+  <title>11 Bar Chart | Statistics From Scratch (Theory + R + ML)</title>
+  <meta name="description" content="11 Bar Chart | Statistics From Scratch (Theory + R + ML)" />
   <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="6 Chapter 3: Descriptive Statistics | Statistics From Scratch (Theory + R + ML)" />
+  <meta property="og:title" content="11 Bar Chart | Statistics From Scratch (Theory + R + ML)" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="6 Chapter 3: Descriptive Statistics | Statistics From Scratch (Theory + R + ML)" />
+  <meta name="twitter:title" content="11 Bar Chart | Statistics From Scratch (Theory + R + ML)" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="chapter-2-data-and-data-collection.html"/>
-<link rel="next" href="measures-of-central-tendency.html"/>
+<link rel="prev" href="frequency-distribution.html"/>
+<link rel="next" href="boxplot.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -264,41 +264,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="chapter-3-descriptive-statistics" class="section level1 hasAnchor" number="6">
-<h1><span class="header-section-number">6</span> Chapter 3: Descriptive Statistics<a href="chapter-3-descriptive-statistics.html#chapter-3-descriptive-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Descriptive statistics answers the question:</p>
-<p>“What does our data look like?”</p>
-<p>Before building models, we must understand the structure of data.</p>
+<div id="bar-chart" class="section level1 hasAnchor" number="11">
+<h1><span class="header-section-number">11</span> Bar Chart<a href="bar-chart.html#bar-chart" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="bar-chart.html#cb39-1" tabindex="-1"></a><span class="fu">barplot</span>(<span class="fu">table</span>(category),</span>
+<span id="cb39-2"><a href="bar-chart.html#cb39-2" tabindex="-1"></a>        <span class="at">col=</span><span class="st">&quot;steelblue&quot;</span>,</span>
+<span id="cb39-3"><a href="bar-chart.html#cb39-3" tabindex="-1"></a>        <span class="at">main=</span><span class="st">&quot;Category Distribution&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-18-1.png" alt="" width="576" /></p>
 <hr />
-<div id="create-sample-data" class="section level2 hasAnchor" number="6.1">
-<h2><span class="header-section-number">6.1</span> Create Sample Data<a href="chapter-3-descriptive-statistics.html#create-sample-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>To make this chapter self-contained, we define data here.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="chapter-3-descriptive-statistics.html#cb15-1" tabindex="-1"></a>sales <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">120</span>, <span class="dv">135</span>, <span class="dv">150</span>, <span class="dv">98</span>, <span class="dv">175</span>, <span class="dv">142</span>)</span>
-<span id="cb15-2"><a href="chapter-3-descriptive-statistics.html#cb15-2" tabindex="-1"></a>category <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Electronics&quot;</span>, <span class="st">&quot;Clothing&quot;</span>, <span class="st">&quot;Electronics&quot;</span>, </span>
-<span id="cb15-3"><a href="chapter-3-descriptive-statistics.html#cb15-3" tabindex="-1"></a>              <span class="st">&quot;Groceries&quot;</span>, <span class="st">&quot;Clothing&quot;</span>, <span class="st">&quot;Electronics&quot;</span>)</span></code></pre></div>
-<hr />
-</div>
-<div id="what-is-descriptive-statistics" class="section level2 hasAnchor" number="6.2">
-<h2><span class="header-section-number">6.2</span> What Is Descriptive Statistics?<a href="chapter-3-descriptive-statistics.html#what-is-descriptive-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Descriptive statistics summarizes and visualizes data.</p>
-<p>It does NOT make predictions about populations.</p>
-<p>It answers:</p>
-<ul>
-<li>What is the average?</li>
-<li>How spread out is the data?</li>
-<li>What values occur most often?</li>
-<li>What does the distribution look like?</li>
-</ul>
-<hr />
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="chapter-2-data-and-data-collection.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="measures-of-central-tendency.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="frequency-distribution.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="boxplot.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

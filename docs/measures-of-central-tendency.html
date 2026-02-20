@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>6 Chapter 3: Descriptive Statistics | Statistics From Scratch (Theory + R + ML)</title>
-  <meta name="description" content="6 Chapter 3: Descriptive Statistics | Statistics From Scratch (Theory + R + ML)" />
+  <title>7 Measures of Central Tendency | Statistics From Scratch (Theory + R + ML)</title>
+  <meta name="description" content="7 Measures of Central Tendency | Statistics From Scratch (Theory + R + ML)" />
   <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="6 Chapter 3: Descriptive Statistics | Statistics From Scratch (Theory + R + ML)" />
+  <meta property="og:title" content="7 Measures of Central Tendency | Statistics From Scratch (Theory + R + ML)" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="6 Chapter 3: Descriptive Statistics | Statistics From Scratch (Theory + R + ML)" />
+  <meta name="twitter:title" content="7 Measures of Central Tendency | Statistics From Scratch (Theory + R + ML)" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="chapter-2-data-and-data-collection.html"/>
-<link rel="next" href="measures-of-central-tendency.html"/>
+<link rel="prev" href="chapter-3-descriptive-statistics.html"/>
+<link rel="next" href="comparing-mean-and-median.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -264,31 +264,39 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="chapter-3-descriptive-statistics" class="section level1 hasAnchor" number="6">
-<h1><span class="header-section-number">6</span> Chapter 3: Descriptive Statistics<a href="chapter-3-descriptive-statistics.html#chapter-3-descriptive-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Descriptive statistics answers the question:</p>
-<p>“What does our data look like?”</p>
-<p>Before building models, we must understand the structure of data.</p>
-<hr />
-<div id="create-sample-data" class="section level2 hasAnchor" number="6.1">
-<h2><span class="header-section-number">6.1</span> Create Sample Data<a href="chapter-3-descriptive-statistics.html#create-sample-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>To make this chapter self-contained, we define data here.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="chapter-3-descriptive-statistics.html#cb15-1" tabindex="-1"></a>sales <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">120</span>, <span class="dv">135</span>, <span class="dv">150</span>, <span class="dv">98</span>, <span class="dv">175</span>, <span class="dv">142</span>)</span>
-<span id="cb15-2"><a href="chapter-3-descriptive-statistics.html#cb15-2" tabindex="-1"></a>category <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Electronics&quot;</span>, <span class="st">&quot;Clothing&quot;</span>, <span class="st">&quot;Electronics&quot;</span>, </span>
-<span id="cb15-3"><a href="chapter-3-descriptive-statistics.html#cb15-3" tabindex="-1"></a>              <span class="st">&quot;Groceries&quot;</span>, <span class="st">&quot;Clothing&quot;</span>, <span class="st">&quot;Electronics&quot;</span>)</span></code></pre></div>
+<div id="measures-of-central-tendency" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">7</span> Measures of Central Tendency<a href="measures-of-central-tendency.html#measures-of-central-tendency" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="mean-average" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Mean (Average)<a href="measures-of-central-tendency.html#mean-average" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><span class="math display">\[
+\bar{x} = \frac{\sum x_i}{n}
+\]</span></p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="measures-of-central-tendency.html#cb16-1" tabindex="-1"></a><span class="fu">mean</span>(sales)</span></code></pre></div>
+<pre><code>## [1] 136.6667</code></pre>
+<p>The mean is the balance point of data.</p>
 <hr />
 </div>
-<div id="what-is-descriptive-statistics" class="section level2 hasAnchor" number="6.2">
-<h2><span class="header-section-number">6.2</span> What Is Descriptive Statistics?<a href="chapter-3-descriptive-statistics.html#what-is-descriptive-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Descriptive statistics summarizes and visualizes data.</p>
-<p>It does NOT make predictions about populations.</p>
-<p>It answers:</p>
-<ul>
-<li>What is the average?</li>
-<li>How spread out is the data?</li>
-<li>What values occur most often?</li>
-<li>What does the distribution look like?</li>
-</ul>
+<div id="median" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Median<a href="measures-of-central-tendency.html#median" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="measures-of-central-tendency.html#cb18-1" tabindex="-1"></a><span class="fu">median</span>(sales)</span></code></pre></div>
+<pre><code>## [1] 138.5</code></pre>
+<p>Median is resistant to outliers.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="measures-of-central-tendency.html#cb20-1" tabindex="-1"></a>sales_with_outlier <span class="ot">&lt;-</span> <span class="fu">c</span>(sales, <span class="dv">1000</span>)</span>
+<span id="cb20-2"><a href="measures-of-central-tendency.html#cb20-2" tabindex="-1"></a><span class="fu">mean</span>(sales_with_outlier)</span></code></pre></div>
+<pre><code>## [1] 260</code></pre>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="measures-of-central-tendency.html#cb22-1" tabindex="-1"></a><span class="fu">median</span>(sales_with_outlier)</span></code></pre></div>
+<pre><code>## [1] 142</code></pre>
+<p>Notice how the mean changes dramatically, but the median does not.</p>
+<hr />
+</div>
+<div id="mode" class="section level2 hasAnchor" number="7.3">
+<h2><span class="header-section-number">7.3</span> Mode<a href="measures-of-central-tendency.html#mode" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="measures-of-central-tendency.html#cb24-1" tabindex="-1"></a><span class="fu">table</span>(category)</span></code></pre></div>
+<pre><code>## category
+##    Clothing Electronics   Groceries 
+##           2           3           1</code></pre>
+<p>Mode is the most frequent value.</p>
+<p>For categorical data, mode is extremely useful.</p>
 <hr />
 </div>
 </div>
@@ -297,8 +305,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="chapter-2-data-and-data-collection.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="measures-of-central-tendency.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="chapter-3-descriptive-statistics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="comparing-mean-and-median.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
