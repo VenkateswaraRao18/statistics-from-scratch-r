@@ -1,0 +1,3 @@
+book_filename: "Statistics_From_Scratch"
+output_dir: "docs"
+delete_merged_file: true
