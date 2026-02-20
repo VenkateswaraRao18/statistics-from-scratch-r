@@ -1,4 +1,4 @@
 rmd_files:
   - index.Rmd
-  - book/01-introduction.Rmd
+  - book/01_introduction.Rmd
   - book/02_data_collection.Rmd

@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>8 4. Population vs Sample | Chapter 2: Data and Data Collection</title>
-  <meta name="description" content="8 4. Population vs Sample | Chapter 2: Data and Data Collection" />
+  <title>4 Chapter 1: Introduction to Statistics | Chapter 2: Data and Data Collection</title>
+  <meta name="description" content="4 Chapter 1: Introduction to Statistics | Chapter 2: Data and Data Collection" />
   <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="8 4. Population vs Sample | Chapter 2: Data and Data Collection" />
+  <meta property="og:title" content="4 Chapter 1: Introduction to Statistics | Chapter 2: Data and Data Collection" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="8 4. Population vs Sample | Chapter 2: Data and Data Collection" />
+  <meta name="twitter:title" content="4 Chapter 1: Introduction to Statistics | Chapter 2: Data and Data Collection" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="levels-of-measurement.html"/>
-<link rel="next" href="census-vs-sampling.html"/>
+<link rel="prev" href="roadmap.html"/>
+<link rel="next" href="what-is-data-1.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -224,27 +224,358 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="population-vs-sample-1" class="section level1 hasAnchor" number="8">
-<h1><span class="header-section-number">8</span> 4. Population vs Sample<a href="population-vs-sample-1.html#population-vs-sample-1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="population" class="section level2 hasAnchor" number="8.1">
-<h2><span class="header-section-number">8.1</span> 4.1 Population<a href="population-vs-sample-1.html#population" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Entire group of interest.</p>
-<p>Example:
-All customers of an e-commerce company.</p>
-</div>
-<div id="sample" class="section level2 hasAnchor" number="8.2">
-<h2><span class="header-section-number">8.2</span> 4.2 Sample<a href="population-vs-sample-1.html#sample" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Subset of population used for analysis.</p>
-<p>Example:
-Surveying 2,000 customers from 1 million.</p>
-<p>Why sample?</p>
-<ul>
-<li>Cheaper</li>
-<li>Faster</li>
-<li>Practical</li>
-</ul>
-<p>Statistics allows us to generalize from sample to population.</p>
+<div id="chapter-1-introduction-to-statistics" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">4</span> Chapter 1: Introduction to Statistics<a href="chapter-1-introduction-to-statistics.html#chapter-1-introduction-to-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Statistics exists because the world is uncertain.</p>
+<p>Every day we make decisions without knowing the future.</p>
+<p>Will tomorrow’s sales increase?<br />
+Will it rain?<br />
+Will a patient recover?<br />
+Will a machine fail?</p>
+<p>The world contains variation, randomness, and unpredictability.</p>
+<p>Statistics gives us tools to reason under uncertainty.</p>
 <hr />
+<div id="why-does-uncertainty-exist" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Why Does Uncertainty Exist?<a href="chapter-1-introduction-to-statistics.html#why-does-uncertainty-exist" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Even if we repeat the same action twice, results can differ.</p>
+<p>For example:</p>
+<ul>
+<li>Two students study equal hours but score differently.</li>
+<li>A marketing campaign works in one city but fails in another.</li>
+<li>A model performs well on training data but poorly on new data.</li>
+</ul>
+<p>This variability is the starting point of statistics.</p>
+<p>Statistics exists because outcomes are not perfectly predictable.</p>
+<hr />
+</div>
+<div id="what-is-data" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> What Is Data?<a href="chapter-1-introduction-to-statistics.html#what-is-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Data is recorded information about the world.</p>
+<p>It can represent:</p>
+<ul>
+<li>Sales numbers<br />
+</li>
+<li>Heights of students<br />
+</li>
+<li>Temperature readings<br />
+</li>
+<li>Website clicks<br />
+</li>
+<li>Medical test results</li>
+</ul>
+<p>But raw data alone has no meaning.</p>
+<p>Example:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="chapter-1-introduction-to-statistics.html#cb1-1" tabindex="-1"></a>sales <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">120</span>, <span class="dv">135</span>, <span class="dv">150</span>, <span class="dv">98</span>, <span class="dv">175</span>, <span class="dv">142</span>)</span>
+<span id="cb1-2"><a href="chapter-1-introduction-to-statistics.html#cb1-2" tabindex="-1"></a>sales</span></code></pre></div>
+<pre><code>## [1] 120 135 150  98 175 142</code></pre>
+<p>These are just numbers.</p>
+<p>Without context, they tell us nothing.</p>
+<p>Statistics gives structure and meaning to data.</p>
+<hr />
+</div>
+<div id="why-raw-data-is-not-enough" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Why Raw Data Is Not Enough<a href="chapter-1-introduction-to-statistics.html#why-raw-data-is-not-enough" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Imagine you are a business manager.</p>
+<p>You receive 10,000 rows of customer transaction data.</p>
+<p>What do you want to know?</p>
+<ul>
+<li>Average purchase amount<br />
+</li>
+<li>Most common product category<br />
+</li>
+<li>Seasonal trends<br />
+</li>
+<li>Whether marketing increased revenue</li>
+</ul>
+<p>Raw data does not answer these.</p>
+<p>We need methods to:</p>
+<ol style="list-style-type: decimal">
+<li>Summarize<br />
+</li>
+<li>Analyze<br />
+</li>
+<li>Interpret<br />
+</li>
+<li>Draw conclusions</li>
+</ol>
+<p>That system of methods is statistics.</p>
+<hr />
+</div>
+<div id="what-is-statistics" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> What Is Statistics?<a href="chapter-1-introduction-to-statistics.html#what-is-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Statistics is the science of learning from data.</p>
+<p>More formally:</p>
+<p>It is the discipline concerned with collecting, organizing, analyzing, interpreting, and presenting data to make decisions under uncertainty.</p>
+<p>Statistics has two major branches:</p>
+<ol style="list-style-type: decimal">
+<li>Descriptive Statistics<br />
+</li>
+<li>Inferential Statistics</li>
+</ol>
+<hr />
+</div>
+<div id="descriptive-vs-inferential-statistics" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> Descriptive vs Inferential Statistics<a href="chapter-1-introduction-to-statistics.html#descriptive-vs-inferential-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="descriptive-statistics" class="section level3 hasAnchor" number="4.5.1">
+<h3><span class="header-section-number">4.5.1</span> Descriptive Statistics<a href="chapter-1-introduction-to-statistics.html#descriptive-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Descriptive statistics summarizes the data we already have.</p>
+<p>Examples:</p>
+<ul>
+<li>Mean (average)<br />
+</li>
+<li>Median<br />
+</li>
+<li>Standard deviation<br />
+</li>
+<li>Charts and graphs</li>
+</ul>
+<p>Example in R:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="chapter-1-introduction-to-statistics.html#cb3-1" tabindex="-1"></a><span class="fu">mean</span>(sales)</span></code></pre></div>
+<pre><code>## [1] 136.6667</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="chapter-1-introduction-to-statistics.html#cb5-1" tabindex="-1"></a><span class="fu">sd</span>(sales)</span></code></pre></div>
+<pre><code>## [1] 26.27293</code></pre>
+<p>These numbers describe only the observed data.</p>
+<p>They do not generalize beyond it.</p>
+<hr />
+</div>
+<div id="inferential-statistics" class="section level3 hasAnchor" number="4.5.2">
+<h3><span class="header-section-number">4.5.2</span> Inferential Statistics<a href="chapter-1-introduction-to-statistics.html#inferential-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Inferential statistics goes further.</p>
+<p>It asks:</p>
+<p>“If this sample looks like this, what can we say about the entire population?”</p>
+<p>Example:</p>
+<p>We survey 200 customers.<br />
+Can we say something about all 50,000 customers?</p>
+<p>Inferential statistics allows us to:</p>
+<ul>
+<li>Estimate unknown quantities<br />
+</li>
+<li>Test hypotheses<br />
+</li>
+<li>Measure uncertainty<br />
+</li>
+<li>Build predictive models</li>
+</ul>
+<p>This is where probability becomes essential.</p>
+<hr />
+</div>
+</div>
+<div id="population-vs-sample" class="section level2 hasAnchor" number="4.6">
+<h2><span class="header-section-number">4.6</span> Population vs Sample<a href="chapter-1-introduction-to-statistics.html#population-vs-sample" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Suppose an e-commerce company has:</p>
+<ul>
+<li>1,000,000 customers (population)</li>
+</ul>
+<p>We survey:</p>
+<ul>
+<li>2,000 customers (sample)</li>
+</ul>
+<p>Why not ask all 1,000,000?</p>
+<p>Because:</p>
+<ul>
+<li>It is expensive<br />
+</li>
+<li>It is slow<br />
+</li>
+<li>It may be impractical</li>
+</ul>
+<p>Statistics allows us to use samples to understand populations.</p>
+<p>This idea is the foundation of modern data science.</p>
+<hr />
+</div>
+<div id="where-statistics-is-used-in-business" class="section level2 hasAnchor" number="4.7">
+<h2><span class="header-section-number">4.7</span> Where Statistics Is Used in Business<a href="chapter-1-introduction-to-statistics.html#where-statistics-is-used-in-business" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Statistics is everywhere in business.</p>
+<div id="marketing" class="section level3 hasAnchor" number="4.7.1">
+<h3><span class="header-section-number">4.7.1</span> Marketing<a href="chapter-1-introduction-to-statistics.html#marketing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>A/B testing<br />
+</li>
+<li>Conversion rate optimization</li>
+</ul>
+</div>
+<div id="finance" class="section level3 hasAnchor" number="4.7.2">
+<h3><span class="header-section-number">4.7.2</span> Finance<a href="chapter-1-introduction-to-statistics.html#finance" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Risk modeling<br />
+</li>
+<li>Portfolio optimization</li>
+</ul>
+</div>
+<div id="operations" class="section level3 hasAnchor" number="4.7.3">
+<h3><span class="header-section-number">4.7.3</span> Operations<a href="chapter-1-introduction-to-statistics.html#operations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Demand forecasting<br />
+</li>
+<li>Inventory control</li>
+</ul>
+</div>
+<div id="healthcare" class="section level3 hasAnchor" number="4.7.4">
+<h3><span class="header-section-number">4.7.4</span> Healthcare<a href="chapter-1-introduction-to-statistics.html#healthcare" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Drug effectiveness testing<br />
+</li>
+<li>Survival analysis</li>
+</ul>
+</div>
+<div id="technology" class="section level3 hasAnchor" number="4.7.5">
+<h3><span class="header-section-number">4.7.5</span> Technology<a href="chapter-1-introduction-to-statistics.html#technology" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Recommendation systems<br />
+</li>
+<li>Fraud detection</li>
+</ul>
+<p>Without statistics, decisions become guesses.</p>
+<hr />
+</div>
+</div>
+<div id="statistics-vs-probability" class="section level2 hasAnchor" number="4.8">
+<h2><span class="header-section-number">4.8</span> Statistics vs Probability<a href="chapter-1-introduction-to-statistics.html#statistics-vs-probability" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>These two are closely related but different.</p>
+<p>Probability:</p>
+<ul>
+<li>Starts with a known model<br />
+</li>
+<li>Predicts outcomes</li>
+</ul>
+<p>Statistics:</p>
+<ul>
+<li>Starts with data<br />
+</li>
+<li>Infers the model</li>
+</ul>
+<p>Example:</p>
+<p>Probability:<br />
+“What is the chance of getting heads?”</p>
+<p>Statistics:<br />
+“Based on 100 flips, is this coin biased?”</p>
+<p>Probability moves forward.<br />
+Statistics moves backward.</p>
+<p>Machine learning combines both.</p>
+<hr />
+</div>
+<div id="case-study-online-retail-company" class="section level2 hasAnchor" number="4.9">
+<h2><span class="header-section-number">4.9</span> Case Study: Online Retail Company<a href="chapter-1-introduction-to-statistics.html#case-study-online-retail-company" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Imagine an online store observing daily sales:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="chapter-1-introduction-to-statistics.html#cb7-1" tabindex="-1"></a>daily_sales <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">120</span>, <span class="dv">150</span>, <span class="dv">130</span>, <span class="dv">160</span>, <span class="dv">200</span>, <span class="dv">170</span>, <span class="dv">180</span>)</span>
+<span id="cb7-2"><a href="chapter-1-introduction-to-statistics.html#cb7-2" tabindex="-1"></a><span class="fu">mean</span>(daily_sales)</span></code></pre></div>
+<pre><code>## [1] 158.5714</code></pre>
+<p>The average daily sales is around 158.</p>
+<p>But management asks:</p>
+<ul>
+<li>Is this stable?</li>
+<li>Is there growth?</li>
+<li>Is advertising working?</li>
+<li>Can we predict next month?</li>
+</ul>
+<p>Now we need:</p>
+<ul>
+<li>Variability analysis<br />
+</li>
+<li>Trend analysis<br />
+</li>
+<li>Hypothesis testing<br />
+</li>
+<li>Regression modeling</li>
+</ul>
+<p>Statistics transforms data into strategy.</p>
+<hr />
+</div>
+<div id="statistics-in-machine-learning" class="section level2 hasAnchor" number="4.10">
+<h2><span class="header-section-number">4.10</span> Statistics in Machine Learning<a href="chapter-1-introduction-to-statistics.html#statistics-in-machine-learning" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Machine learning is built on statistical ideas.</p>
+<p>Examples:</p>
+<ul>
+<li>Linear regression = statistical regression model<br />
+</li>
+<li>Logistic regression = probability model<br />
+</li>
+<li>Naive Bayes = conditional probability<br />
+</li>
+<li>Gaussian distributions = normal distribution theory<br />
+</li>
+<li>Overfitting = variance concept<br />
+</li>
+<li>Bias-variance tradeoff = statistical error decomposition</li>
+</ul>
+<p>Even neural networks rely on:</p>
+<ul>
+<li>Optimization<br />
+</li>
+<li>Loss functions<br />
+</li>
+<li>Probability distributions</li>
+</ul>
+<p>If statistics is weak,<br />
+machine learning becomes memorization without understanding.</p>
+<p>Strong statisticians become strong ML engineers.</p>
+<hr />
+</div>
+<div id="the-big-picture" class="section level2 hasAnchor" number="4.11">
+<h2><span class="header-section-number">4.11</span> The Big Picture<a href="chapter-1-introduction-to-statistics.html#the-big-picture" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Statistics answers four fundamental questions:</p>
+<ol style="list-style-type: decimal">
+<li>What happened?<br />
+</li>
+<li>Why did it happen?<br />
+</li>
+<li>What will happen next?<br />
+</li>
+<li>How confident are we?</li>
+</ol>
+<p>It provides tools to reason under uncertainty.</p>
+<p>It replaces guesswork with structured thinking.</p>
+<hr />
+</div>
+<div id="what-you-will-learn-in-this-book" class="section level2 hasAnchor" number="4.12">
+<h2><span class="header-section-number">4.12</span> What You Will Learn in This Book<a href="chapter-1-introduction-to-statistics.html#what-you-will-learn-in-this-book" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In the next chapters, we will explore:</p>
+<ul>
+<li>Data types and measurement scales<br />
+</li>
+<li>Sampling techniques<br />
+</li>
+<li>Descriptive measures<br />
+</li>
+<li>Probability theory<br />
+</li>
+<li>Distributions<br />
+</li>
+<li>Estimation and confidence intervals<br />
+</li>
+<li>Hypothesis testing<br />
+</li>
+<li>Regression and correlation<br />
+</li>
+<li>Time series analysis<br />
+</li>
+<li>Non-parametric methods<br />
+</li>
+<li>Advanced statistical concepts used in AI</li>
+</ul>
+<p>Each concept will include:</p>
+<ul>
+<li>Intuition<br />
+</li>
+<li>Real-world application<br />
+</li>
+<li>Mathematical explanation<br />
+</li>
+<li>R implementation<br />
+</li>
+<li>Machine learning connection</li>
+</ul>
+<hr />
+</div>
+<div id="final-thought" class="section level2 hasAnchor" number="4.13">
+<h2><span class="header-section-number">4.13</span> Final Thought<a href="chapter-1-introduction-to-statistics.html#final-thought" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Statistics is not about numbers.</p>
+<p>It is about understanding uncertainty.</p>
+<p>Once you understand uncertainty,<br />
+you understand risk.</p>
+<p>Once you understand risk,<br />
+you make better decisions.</p>
+
 </div>
 </div>
             </section>
@@ -252,8 +583,8 @@ Surveying 2,000 customers from 1 million.</p>
           </div>
         </div>
       </div>
-<a href="levels-of-measurement.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="census-vs-sampling.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="roadmap.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="what-is-data-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

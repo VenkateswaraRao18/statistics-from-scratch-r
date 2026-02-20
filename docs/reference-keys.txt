@@ -1,6 +1,7 @@
 welcome
 how-to-use-this-book
 roadmap
+chapter-1-introduction-to-statistics
 why-does-uncertainty-exist
 what-is-data
 why-raw-data-is-not-enough
