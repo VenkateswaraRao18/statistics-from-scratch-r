@@ -1,9 +1,8 @@
 ---
 title: "Statistics From Scratch (Theory + R + ML)"
-author: "Venkateswara Rao jannegorla"
+author: "Venkateswara Rao Jannegorla"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
-output: bookdown::html_document2
 documentclass: book
 ---
 
@@ -18,16 +17,12 @@ It is designed for:
 - Business analytics learners
 - ML engineers who want strong statistical foundations
 
----
-
 # How to Use This Book
 
 1. Read intuition carefully  
 2. Run the R code  
 3. Think about business application  
 4. Connect to ML concepts  
-
----
 
 # Roadmap
 
